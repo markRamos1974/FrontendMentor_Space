@@ -26,7 +26,7 @@ const NavItem = ({ destination, last, navNumber, activeMenu, setActiveMenu, isMo
                       
                        
       >
-        <Link onClick={handleActiveMenu} to={destination === "HOME" ?  "/" : destination.toLowerCase() + "/" +index} 
+        <Link onClick={handleActiveMenu} to={destination === "HOME" ?  "/FrontendMentor_Space/" : "/FrontendMentor_Space/" + destination.toLowerCase() + "/" +index} 
               className={`
               
   

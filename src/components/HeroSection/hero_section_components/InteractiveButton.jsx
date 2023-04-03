@@ -13,21 +13,24 @@ function InteractiveButton() {
     }
 
     return (
-        <Link to={"/destination/1"} className='w-full
-                        flex 
-                        justify-center
-                        items-center
+        <div className='w-full
+        flex 
+        justify-center
+        items-center
 
-                        sm:h-[9.375rem]  
+        sm:h-[9.375rem]  
 
-                        md:h-[15.125rem]  
-                        md:mb-[5.625rem]
+        md:h-[15.125rem]  
+        md:mb-[5.625rem]
 
-                        lg:h-[100%] 
-                        lg:justify-end 
-                        lg:items-end  
-                        lg:mb-0
-        '>
+        lg:h-[100%] 
+        lg:justify-end 
+        lg:items-end  
+        lg:mb-0
+'>
+
+<Link to={"destination/1"}>
+            
     
             <div className='relative 
 
@@ -104,6 +107,8 @@ function InteractiveButton() {
                 </div> 
             </div>
         </Link>
+        </div>
+        
     )
 }
 

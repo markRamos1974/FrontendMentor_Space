@@ -84,10 +84,10 @@ const App = () => {
           >
           <Header />
           <Routes>
-            <Route element={<HeroSection />} path={"/"}/>
-            <Route element={<Destination setActiveMenu={setActiveMenu}/>} path={"/:destination/1"}/>
-            <Route element={<Crew setActiveMenu={setActiveMenu}/>} path={"/:crew/2"} />
-            <Route element={<Techonology setActiveMenu={setActiveMenu}/>} path={"/:technology/3"} />
+            <Route element={<HeroSection />} path={"/FrontendMentor_Space/"}/>
+            <Route element={<Destination setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/:destination/1"}/>
+            <Route element={<Crew setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/:crew/2"} />
+            <Route element={<Techonology setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/:technology/3"} />
           </Routes>
          </div>
         
