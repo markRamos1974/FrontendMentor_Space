@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PageHeading from '../Global/PageHeading'
 import CrewData from "../../../data.json"
 import TechnologyCarousel from './technology_slider/TechnologyCarousel';
 import SliderIndicator from './technology_slider_indicator/SliderIndicator';
 import TechnologyContext from './technology_context/TechnologyContext';
 import data from '../../../data.json'
+import { useParams } from 'react-router-dom'
 
-function Techonology() {
+function Techonology({ setActiveMenu }) {
   const [activeSlideIndex, setActiveSlide] = useState(0)
+  const { technology } = useParams()
+
+  useEffect(() => {
+    setActiveMenu(technology.toUpperCase())
+
+  },[])
+
   return (
   
     <div className='technology section lg:pl-[10.4375rem] lg:pb-[5.625rem] '>

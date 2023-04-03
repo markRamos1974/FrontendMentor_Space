@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { Link } from 'react-router-dom'
 import { AppContext } from "../../../App"
 
-const NavItem = ({ destination, last, navNumber, activeMenu, setActiveMenu, isMobile}) => {
+const NavItem = ({ destination, last, navNumber, activeMenu, setActiveMenu, isMobile , index}) => {
     const { isHamburgerMenuActive, setIsHamburgerMenuActive} = useContext(AppContext)
 
     const handleActiveMenu = () => {
@@ -26,7 +26,7 @@ const NavItem = ({ destination, last, navNumber, activeMenu, setActiveMenu, isMo
                       
                        
       >
-        <Link onClick={handleActiveMenu} to={destination === "HOME" ?  "/" : destination.toLowerCase()} 
+        <Link onClick={handleActiveMenu} to={destination === "HOME" ?  "/" : destination.toLowerCase() + "/" +index} 
               className={`
               
   

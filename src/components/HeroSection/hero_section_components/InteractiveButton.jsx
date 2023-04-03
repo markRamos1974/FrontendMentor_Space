@@ -13,7 +13,7 @@ function InteractiveButton() {
     }
 
     return (
-        <Link to={"/destination"} className='w-full
+        <Link to={"/destination/1"} className='w-full
                         flex 
                         justify-center
                         items-center

@@ -19,7 +19,9 @@ function Menu( {  menus } ) {
               <ul className='flex'>
 
                   { menus.map(item => {
+
                     return <NavItem key={item.destination} activeMenu={activeMenu} 
+                                    index={menus.indexOf(item)}
                                     setActiveMenu={setActiveMenu} 
                                     navNumber={item.navNumber} 
                                     destination={item.destination}

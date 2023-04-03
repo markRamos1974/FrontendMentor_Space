@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PageHeading from '../Global/PageHeading'
 import CrewDescription from './crew_components/CrewContext/CrewDescription'
 import CrewName from './crew_components/CrewContext/CrewName'
@@ -6,11 +6,19 @@ import CrewRole from './crew_components/CrewContext/CrewRole'
 import CrewImageSlider from './crew_components/CrewImageSlider/CrewImageSlider'
 import SliderIndicator from './crew_components/CrewImageSlider/crew_image_slider_/SliderIndicator'
 import CrewData from "../../../data.json"
+import { useParams } from 'react-router-dom'
 
-
-function Crew() {
+function Crew({ setActiveMenu }) {
+  const { crew } = useParams()
   const [sliderIndexPosition, setSliderIndexPosition] = useState(0)
   const [data] = useState(CrewData.crew)
+
+  useEffect(() => {
+    setActiveMenu(crew.toUpperCase())
+
+  },[])
+
+
   return (
     <div className='Crew px-6 md:mt-10 text-center md:text-start lg:px-[10.4375rem] lg:mt-[4.75rem]'>
       <PageHeading number={"02"} context={"MEET YOUR CREW"} component="Crew"/>

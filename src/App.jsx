@@ -6,21 +6,61 @@ import Destination from './components/Destination/Destination'
 import Crew from './components/Crew/Crew'
 import Techonology from './components/Technology/Techonology'
 
+//Backgrounds
+import HomeMobile from './assets/home/background-home-mobile.jpg'
+import HomeTablet from './assets/home/background-home-tablet.jpg'
+import HomeDesktop from './assets/home/background-home-desktop.jpg'
+
+import DestinationMobile from './assets/destination/background-destination-mobile.jpg'
+import DestinationTablet from './assets/destination/background-destination-tablet.jpg'
+import DestinationDesktop from './assets/destination/background-destination-desktop.jpg'
+
+import CrewMobile from './assets/crew/background-crew-mobile.jpg'
+import CrewTablet from './assets/crew/background-crew-tablet.jpg'
+import CrewDesktop from './assets/crew/background-crew-desktop.jpg'
+
+import TechMobile from './assets/technology/background-technology-mobile.jpg'
+import TechTablet from './assets/technology/background-technology-tablet.jpg'
+import TechDesktop from './assets/technology/background-technology-desktop.jpg'
 
 export const AppContext = createContext()
 
 const background = {
-  home: "sm:bg-mobile md:bg-tablet lg:bg-desktop ",
-  destination: "sm:bg-destination-mobile md:bg-destination-tablet lg:bg-destination-desktop",
-  crew: "sm:bg-crew-mobile md:bg-crew-tablet lg:bg-crew-desktop",
-  technology: "sm:bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop"
+  home: {
+    mobile: HomeMobile,
+    tablet: HomeTablet,
+    desktop: HomeDesktop,
+  },
+  destination:  {
+    mobile: DestinationMobile,
+    tablet: DestinationTablet,
+    desktop: DestinationDesktop,
+  },
+  crew:  {
+    mobile: CrewMobile,
+    tablet: CrewTablet,
+    desktop: CrewDesktop,
+  },
+  technology:  {
+    mobile: TechMobile,
+    tablet: TechTablet,
+    desktop: TechDesktop,
+  },
 }
 
 
 const App = () => {
   const [activeMenu, setActiveMenu] = useState("HOME")
-  const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useState(false)
- 
+  const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useState(false) 
+  const [screenIndex, setScreenIndex] = useState(window.innerWidth >= 1440 ? 2 : window.innerWidth >= 768 ? 1 : 0)
+
+  window.addEventListener("resize", () => {
+    const screenSize = window.innerWidth
+
+    if(screenSize >= 1440) setScreenIndex(2)
+    else if (screenSize >= 768) setScreenIndex(1)
+    else setScreenIndex(0)
+  })
   return (
       <AppContext.Provider value={{ 
                                     activeMenu, 
@@ -30,26 +70,24 @@ const App = () => {
 
                                   }}>
         <div className="App">
-          <div className={`
-                           ${isHamburgerMenuActive ? "mobile-menu-active" : "homepage"}
-                           ${activeMenu === "HOME" ? background.home : null}
-                           ${activeMenu === "DESTINATION" ? background.destination : null}
-                           ${activeMenu === "CREW" ? background.crew : null}
-                           ${activeMenu === "TECHNOLOGY" ? background.technology : null}
-                           h-screen 
-                         bg-dark-blue 
-                           bg-no-repeat 
-                           bg-cover 
-                           relative
-                           
-                           
-          `}>
+          <div className={`${isHamburgerMenuActive ? "mobile-menu-active" : "homepage"} h-screen bg-dark-blue bg-no-repeat  bg-cover relative`}
+                style={
+                  activeMenu === "HOME" ? { 
+                    backgroundImage: screenIndex === 0 ? `url("${background.home.mobile}")` : screenIndex === 1 ? `url("${background.home.tablet}")` : `url("${background.home.desktop}")`
+                  } : activeMenu === "DESTINATION" ? {
+                    backgroundImage: screenIndex === 0 ? `url("${background.destination.mobile}")` : screenIndex === 1 ? `url("${background.destination.tablet}")` : `url("${background.destination.desktop}")`
+                  } : activeMenu === "CREW" ? {
+                    backgroundImage: screenIndex === 0 ? `url("${background.crew.mobile}")` : screenIndex === 1 ? `url("${background.crew.tablet}")` : `url("${background.crew.desktop}")`
+                  } : activeMenu === "TECHNOLOGY" ? {
+                    backgroundImage: screenIndex === 0 ? `url("${background.technology.mobile}")` : screenIndex === 1 ? `url("${background.technology.tablet}")` : `url("${background.technology.desktop}")`
+                  } : {}}
+          >
           <Header />
           <Routes>
             <Route element={<HeroSection />} path={"/"}/>
-            <Route element={<Destination setActiveMenu={setActiveMenu}/>} path={"/:destination"}/>
-            <Route element={<Crew/>} path={"/crew"} />
-            <Route element={<Techonology/>} path={"/technology"} />
+            <Route element={<Destination setActiveMenu={setActiveMenu}/>} path={"/:destination/1"}/>
+            <Route element={<Crew setActiveMenu={setActiveMenu}/>} path={"/:crew/2"} />
+            <Route element={<Techonology setActiveMenu={setActiveMenu}/>} path={"/:technology/3"} />
           </Routes>
          </div>
         
