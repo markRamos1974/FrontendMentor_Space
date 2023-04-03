@@ -53,7 +53,10 @@ const App = () => {
   const [activeMenu, setActiveMenu] = useState("HOME")
   const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useState(false) 
   const [screenIndex, setScreenIndex] = useState(window.innerWidth >= 1440 ? 2 : window.innerWidth >= 768 ? 1 : 0)
-
+  
+  window.addEventListener("unload", () => {
+    window.location.href = "/"
+  })
   window.addEventListener("resize", () => {
     const screenSize = window.innerWidth
 

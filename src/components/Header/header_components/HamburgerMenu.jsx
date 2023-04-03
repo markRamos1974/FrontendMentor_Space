@@ -60,6 +60,7 @@ function HamburgerMenu({ menus }) {
         {
             menus.map(item => {
               return <NavItem key={item.navNumber} 
+                        index={menus.indexOf(item)}
                         isMobile={true} 
                         activeMenu={activeMenu} 
                         setActiveMenu={setActiveMenu} 
