@@ -188,21 +188,21 @@ Error generating stack: `+l.message+`
                   lg:text-left  \r
                   lg:text-[1.75rem] \r
                   lg:tracking-[4.72px]\r
-      `,children:"SO, YOU WANT TO TRAVEL TO"})}function Lh(){const[e,t]=x.useState(!1);return k(Ld,{to:"/destination/1",className:`w-full\r
-                        flex \r
-                        justify-center\r
-                        items-center\r
+      `,children:"SO, YOU WANT TO TRAVEL TO"})}function Lh(){const[e,t]=x.useState(!1);return k("div",{className:`w-full\r
+        flex \r
+        justify-center\r
+        items-center\r
 \r
-                        sm:h-[9.375rem]  \r
+        sm:h-[9.375rem]  \r
 \r
-                        md:h-[15.125rem]  \r
-                        md:mb-[5.625rem]\r
+        md:h-[15.125rem]  \r
+        md:mb-[5.625rem]\r
 \r
-                        lg:h-[100%] \r
-                        lg:justify-end \r
-                        lg:items-end  \r
-                        lg:mb-0\r
-        `,children:B("div",{className:`relative \r
+        lg:h-[100%] \r
+        lg:justify-end \r
+        lg:items-end  \r
+        lg:mb-0\r
+`,children:k(Ld,{to:"destination/1",children:B("div",{className:`relative \r
 \r
                             sm:h-[9.375rem] \r
                             sm:w-[9.375rem] \r
@@ -262,7 +262,7 @@ Error generating stack: `+l.message+`
                                   tracking-[1.25px] \r
                                   \r
                                   md:text-[2rem]\r
-                    `,children:"EXPLORE"})})]})})}function Oh(){return k("h1",{className:`text-theme-white \r
+                    `,children:"EXPLORE"})})]})})})}function Oh(){return k("h1",{className:`text-theme-white \r
                      font-heading \r
                      text-[5rem] \r
                      mb-[16px] \r
