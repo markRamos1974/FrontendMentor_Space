@@ -4,7 +4,7 @@ import { createElement } from 'react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "FrontendMentor_Space",
+  base: "/FrontendMentor_Space/",
   plugins: [react()],
   build: {
     outDir: './build'
