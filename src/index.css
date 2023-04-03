@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* setting an overflow scroll mobile and  tablet*/
+@media (max-height: 1079px) {
+    .homepage{
+        overflow-x: hidden;
+        height: (100vh - 88px);
+    }  
+
+    .mobile-menu-active {
+        overflow: hidden;
+        height: (100vh - 88px);
+    }
+}
+
+ 
+/* Setting the height of hero section in  desktop*/
+@media (min-width: 1440px) {
+    .hero-section{
+        height: calc(100vh - 136px);
+    }
+}
+
+@media (min-width: 1440px) and (max-height: 730px){
+    .hero-section{
+        height: 766.53px;
+    }
+}
+
+
+/* Header Glass effect for mobile */
+.mobile-menu, .glass-container{
+    background:  rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(600px);
+        -webkit-backdrop-filter: blur(40px);
+}
+
+/* Header Glass effect for desktop*/
+@media (min-width: 1440px) {
+    .glass-container{
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        backdrop-filter: blur(300px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+
+
+
+
+
+/* Destination Nav items overriding tailwind properties*/
+.destination-nav-items > li:last-child {
+    margin-right: 0px !important;
+}
+
+/* Creating animation for planet */
+.planet-image{
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.text-position{
+    transform: translateY(-200px);
+    opacity: 0;
+}
+/* Creww section */
+.slider{
+    width: 400%;
+
+}
+
+.slider-indicators > div:not(:last-child){
+    margin-right: 1rem;
+}
+
+
+@media (min-width: 1440px) {
+    .slider-indicators > div:not(:last-child){
+        margin-right: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1440px) {
+    .slider-container > .swiper-initialized > .swiper-wrapper > .swiper-slide {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .crewImage:nth-child(3){
+        width: 35.875rem;
+    }
+}
+
+/* tehcnology */
+@media  (min-width: 1440px){
+    .tech-slider{
+        width: 32.1875rem;
+        height: 32.9375rem;
+    }
+}
+
