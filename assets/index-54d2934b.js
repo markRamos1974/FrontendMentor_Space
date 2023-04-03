@@ -188,7 +188,7 @@ Error generating stack: `+l.message+`
                   lg:text-left  \r
                   lg:text-[1.75rem] \r
                   lg:tracking-[4.72px]\r
-      `,children:"SO, YOU WANT TO TRAVEL TO"})}function Lh(){const[e,t]=x.useState(!1);return k(Ld,{to:"/destination",className:`w-full\r
+      `,children:"SO, YOU WANT TO TRAVEL TO"})}function Lh(){const[e,t]=x.useState(!1);return k(Ld,{to:"/destination/1",className:`w-full\r
                         flex \r
                         justify-center\r
                         items-center\r
