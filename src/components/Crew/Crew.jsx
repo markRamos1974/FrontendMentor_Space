@@ -9,12 +9,15 @@ import CrewData from "../../../data.json"
 import { useParams } from 'react-router-dom'
 
 function Crew({ setActiveMenu }) {
-  const { crew } = useParams()
+  const { pageNumber } = useParams()
   const [sliderIndexPosition, setSliderIndexPosition] = useState(0)
   const [data] = useState(CrewData.crew)
 
   useEffect(() => {
-    setActiveMenu(crew.toUpperCase())
+    if(pageNumber == '1') setActiveMenu("DESTINATION")
+    if(pageNumber == '2') setActiveMenu("CREW")
+    if(pageNumber == '3') setActiveMenu("TECHNOLOGY")
+    
 
   },[])
 

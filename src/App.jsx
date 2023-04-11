@@ -53,10 +53,7 @@ const App = () => {
   const [activeMenu, setActiveMenu] = useState("HOME")
   const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useState(false) 
   const [screenIndex, setScreenIndex] = useState(window.innerWidth >= 1440 ? 2 : window.innerWidth >= 768 ? 1 : 0)
-  
-  window.addEventListener("unload", () => {
-    window.location.href = "/"
-  })
+
   window.addEventListener("resize", () => {
     const screenSize = window.innerWidth
 
@@ -64,6 +61,13 @@ const App = () => {
     else if (screenSize >= 768) setScreenIndex(1)
     else setScreenIndex(0)
   })
+ 
+  const handleRoute = () => {
+    console.log(true)
+    window.history.pushState("", "", "/FrontendMentor_Space/")
+  }
+  handleRoute()
+
   return (
       <AppContext.Provider value={{ 
                                     activeMenu, 
@@ -88,9 +92,9 @@ const App = () => {
           <Header />
           <Routes>
             <Route element={<HeroSection />} path={"/FrontendMentor_Space/"}/>
-            <Route element={<Destination setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/:destination/1"}/>
-            <Route element={<Crew setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/:crew/2"} />
-            <Route element={<Techonology setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/:technology/3"} />
+            <Route element={<Destination setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/destination/:pageNumber"}/>
+            <Route element={<Crew setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/crew/:pageNumber"} />
+            <Route element={<Techonology setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/technology/:pageNumber"} />
           </Routes>
          </div>
         
@@ -104,6 +108,8 @@ const App = () => {
    
    
   )
+
+
 }
 
 export default App

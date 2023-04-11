@@ -18,11 +18,13 @@ function Destination({ setActiveMenu }) {
   const [planetData] = useState({MOON, MARS, EUROPA, TITAN})
   const [activeDestination, setActiveDestination] = useState("MOON")
   const [data] = useState(DestinationData.destinations[0])
-  const { destination } = useParams()
+  const { pageNumber } = useParams()
 
   //Persisting backgrounds
   useEffect(() => {
-    setActiveMenu(destination.toUpperCase())
+    if(pageNumber == '1') setActiveMenu("DESTINATION")
+    if(pageNumber == '2') setActiveMenu("CREW")
+    if(pageNumber == '3') setActiveMenu("TECHNOLOGY")
   },[])
   return (
     <div className='w-full destination px-6 pb-[3.625rem] relative md:pt-10 md:px-[2.4375rem] md:pb-[3.875rem] lg:px-[10.1875rem] lg:flex lg:pt-[4.75rem] lg:items-end'>

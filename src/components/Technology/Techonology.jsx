@@ -9,10 +9,12 @@ import { useParams } from 'react-router-dom'
 
 function Techonology({ setActiveMenu }) {
   const [activeSlideIndex, setActiveSlide] = useState(0)
-  const { technology } = useParams()
+  const { pageNumber } = useParams()
 
   useEffect(() => {
-    setActiveMenu(technology.toUpperCase())
+    if(pageNumber == '1') setActiveMenu("DESTINATION")
+    if(pageNumber == '2') setActiveMenu("CREW")
+    if(pageNumber == '3') setActiveMenu("TECHNOLOGY")
 
   },[])
 
