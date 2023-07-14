@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useEffect } from 'react'
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import { Route, Routes } from 'react-router-dom'
@@ -6,7 +6,7 @@ import Destination from './components/Destination/Destination'
 import Crew from './components/Crew/Crew'
 import Techonology from './components/Technology/Techonology'
 
-//Backgrounds
+//Backgroundss
 import HomeMobile from './assets/home/background-home-mobile.jpg'
 import HomeTablet from './assets/home/background-home-tablet.jpg'
 import HomeDesktop from './assets/home/background-home-desktop.jpg'
