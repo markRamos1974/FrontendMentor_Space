@@ -6,7 +6,7 @@ import Destination from './components/Destination/Destination'
 import Crew from './components/Crew/Crew'
 import Techonology from './components/Technology/Techonology'
 
-//Backgroundss
+//Backgrounds for different breakbpoints
 import HomeMobile from './assets/home/background-home-mobile.jpg'
 import HomeTablet from './assets/home/background-home-tablet.jpg'
 import HomeDesktop from './assets/home/background-home-desktop.jpg'
