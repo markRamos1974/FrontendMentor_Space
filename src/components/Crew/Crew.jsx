@@ -23,7 +23,7 @@ function Crew({ setActiveMenu }) {
 
 
   return (
-    <div className='Crew px-6 md:mt-10 text-center md:text-start lg:px-[10.4375rem] lg:mt-[4.75rem]'>
+    <div className='Crew px-6 md:mt-10 text-center md:text-start lg:px-[10.4375rem] lg:mt-[4.75rem] xl:px-[20rem]'>
       <PageHeading number={"02"} context={"MEET YOUR CREW"} component="Crew"/>
       <div className='items-container md:flex md:flex-col-reverse md:justify-between lg:flex-row-reverse lg:items-start'>
         <div className={`carousel 
@@ -35,19 +35,7 @@ function Crew({ setActiveMenu }) {
                          `}>
           <CrewImageSlider sliderIndexPosition={sliderIndexPosition} data={data} setSliderIndexPosition={setSliderIndexPosition}/>
         </div>
-        <div className={`mt-8 
-                        w-[20.4375rem] 
-                        text-center 
-                        mx-auto 
-                        
-                        md:flex 
-                        md:flex-col-reverse
-                
-                        lg:m-0
-                        lg:h-[35.75rem]
-                        lg:justify-between
-                        lg:pb-[5.125rem]
-                        lg:pt-[10rem]
+        <div className={`mt-8 w-[20.4375rem] text-center mx-auto md:flex md:flex-col-reverse lg:m-0 lg:h-[35.75rem] lg:justify-between lg:pb-[5.125rem] lg:pt-[10rem]
                         
                         ${sliderIndexPosition === 0 ? "md:w-[28.625rem] lg:w-[35.504375rem]" : null}
                         ${sliderIndexPosition === 1 ? "md:w-[32.5rem]" : null}

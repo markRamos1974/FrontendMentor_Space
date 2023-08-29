@@ -97,7 +97,7 @@ const App = () => {
             <Route element={<Techonology setActiveMenu={setActiveMenu}/>} path={"/FrontendMentor_Space/technology/:pageNumber"} />
           </Routes>
          </div>
-        
+      
         
   
         </div>

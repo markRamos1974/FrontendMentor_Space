@@ -20,7 +20,7 @@ function Techonology({ setActiveMenu }) {
 
   return (
   
-    <div className='technology section lg:pl-[10.4375rem] lg:pb-[5.625rem] '>
+    <div className='technology section lg:pl-[10.4375rem] lg:pb-[5.625rem] xl:pr-[10.4375rem]'>
       <div className=' text-center md:text-start md:pl-[2.4375rem] md:mt-10 lg:pl-0 lg:mb-[1.625rem] lg:mt-[4.75rem]'> 
         <PageHeading number={"03"} context={"SPACE LAUNCH 101"} component={"technology"}/>
       </div>
